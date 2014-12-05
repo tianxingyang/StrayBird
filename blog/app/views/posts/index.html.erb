@@ -1,18 +1,29 @@
-<h1>Welcome to YANG's Blog</h1>  
+<!doctype html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>BLOG</title>
+	</head>
+	<body>
+		<h1>Welcome to YANG's Blog</h1>  
   
-<% @posts.each do |post| %>  
-   <h2><%= link_to post.title, post%></h2>  
-   <p>  
-       <i>-<%= time_ago_in_words post.created_at %> ago </i>  
-   </p>      
-   <p>  
-     <%= truncate post.text %>  
-   </p>  
-<% end %>  
-  
-<p>  
-   <%= link_to "New Post", new_post_path%>  
-</p>  </table>
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+		<% @posts.each do |post| %>  
+		<h2><%= link_to post.title, post%></h2>  
+		
+		<p>  
+			<i>-<%= time_ago_in_words post.created_at %> ago </i>  
+		</p>      
+		
+		<p>  
+			<%= truncate post.text %>  
+		</p>  
+		
+		<% end %>  
+		
+		<p>  
+			<%= link_to "New Post", new_post_path%>  
+		</p>
+		
+		<%= link_to 'New Post', new_post_path %>
+	</body>
+</html>
